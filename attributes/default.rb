@@ -17,9 +17,8 @@
 # limitations under the License.
 #
 
-case node["platform_family"]
-when "debian"
-  default["network"]["packages"] = %w(
+default["network"]["packages"] = value_for_platform_family(
+  "debian" => %w(
     iputils-ping
     iproute
     lsof
@@ -35,9 +34,9 @@ when "debian"
     jnettop
     bind9-host
     ipcalc
-  )
-when "ubuntu"
-  default["network"]["packages"] = %w(
+    netcat-openbsd
+  ),
+  "ubuntu" => %w(
     iputils-ping
     iproute
     lsof
@@ -53,9 +52,9 @@ when "ubuntu"
     jnettop
     bind9-host
     ipcalc
-  )
-when "suse"
-  default["network"]["packages"] = %w(
+    netcat-openbsd
+  ),
+  "suse" => %w(
     iputils
     iproute2
     lsof
@@ -68,5 +67,6 @@ when "suse"
     ethtool
     tcpdump
     w3m
+    netcat-openbsd
   )
-end
+)
