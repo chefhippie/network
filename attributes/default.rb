@@ -63,7 +63,7 @@ default["network"]["packages"] = value_for_platform_family(
     wget
     rsync
     nmap
-    traceroute
+    net-tools
     ethtool
     tcpdump
     w3m
