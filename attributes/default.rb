@@ -36,24 +36,6 @@ default["network"]["packages"] = value_for_platform_family(
     ipcalc
     netcat-openbsd
   ),
-  "ubuntu" => %w(
-    iputils-ping
-    iproute
-    lsof
-    whois
-    curl
-    wget
-    rsync
-    nmap
-    traceroute
-    ethtool
-    tcpdump
-    w3m
-    jnettop
-    bind9-host
-    ipcalc
-    netcat-openbsd
-  ),
   "suse" => %w(
     iputils
     iproute2
